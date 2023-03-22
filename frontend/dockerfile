@@ -1,0 +1,11 @@
+FROM node:current-alpine3.17 
+#move files in current directory to app
+COPY . /app/
+# cd app
+WORKDIR /app/
+#install dependencies
+RUN npm install
+#exposing port
+EXPOSE 3000
+#running npm
+CMD npm start

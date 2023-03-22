@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: frontend-cilist
+  name: frontend-cilist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-cilist
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: frontend-cilist
+    spec:
+      containers:
+      - image: giovana02/cilist-frontend
+        name: frontend-cilist
+        ports:
+          - containerPort: 3000
+        env:
+          - name: REACT_APP_BACKEND_URL
+            value: "http://a43484044b4984f9aacd30d8970c1c6a-1072978343.ap-southeast-3.elb.amazonaws.com:5000"
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: frontend-cilist
+  name: frontend-cilist
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: frontend-cilist
+  type: LoadBalancer
+status:
+  loadBalancer: {}

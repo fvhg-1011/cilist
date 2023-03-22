@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  #frontend-contoh:
+  #  image: cilist-frontend:latest
+  #  ports:
+  #  - 3000:3000
+  #  environment:
+  #    REACT_APP_BACKEND_URL: "http://backend-contoh:5000"
+    
+
+  backend-contoh:
+    image: cilist-backend:latest
+    ports:
+      - 5000:5000
+    environment:
+      DATABASE_USERNAME: "admin"
+      DATABASE_PASSWORD: "favianhugo27"
+      DATABASE_DATABASE: "people" 
+      DATABASE_HOST: "jakarta-cluster.c1h14jljsded.ap-southeast-3.rds.amazonaws.com"
+      DATABASE_PORT: 3306
+      BASE_URL_PORT: 5000

@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: backend-cilist
+  name: backend-cilist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-cilist
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: backend-cilist
+    spec:
+      containers:
+      - image: giovana02/cilist-backend
+        name: cilist-backend
+        ports:
+          - containerPort: 5000
+        env:
+          - name: DATABASE_USERNAME
+            value: "admin"
+          - name: DATABASE_PASSWORD
+            value: "favianhugo"
+          - name: DATABASE_DATABASE
+            value: "people"
+          - name: DATABASE_HOST
+            value: "jakarta-db.c1h14jljsded.ap-southeast-3.rds.amazonaws.com"
+          - name: DATABASE_PORT
+            value: "3306"
+          - name: BASE_URL_PORT
+            value: "5000"
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: backend-cilist
+  name: backend-cilist
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: backend-cilist
+  type: LoadBalancer
+status:
+  loadBalancer: {}
