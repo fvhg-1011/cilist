@@ -30,7 +30,7 @@ spec:
           - name: DATABASE_DATABASE
             value: "people"
           - name: DATABASE_HOST
-            value: "jakarta-db.c1h14jljsded.ap-southeast-3.rds.amazonaws.com"
+            value: "cobain-db.c1h14jljsded.ap-southeast-3.rds.amazonaws.com"
           - name: DATABASE_PORT
             value: "3306"
           - name: BASE_URL_PORT
