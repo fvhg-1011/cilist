@@ -24,7 +24,7 @@ spec:
           - containerPort: 3000
         env:
           - name: REACT_APP_BACKEND_URL
-            value: "http://localhost:5000"
+            value: "http://108.136.219.135:5000"
         resources: {}
 status: {}
 ---
