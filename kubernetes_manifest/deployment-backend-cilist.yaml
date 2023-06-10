@@ -26,11 +26,11 @@ spec:
           - name: DATABASE_USERNAME
             value: "admin"
           - name: DATABASE_PASSWORD
-            value: "favianhugo"
+            value: "favianhugo27"
           - name: DATABASE_DATABASE
             value: "people"
           - name: DATABASE_HOST
-            value: "cobain-db.c1h14jljsded.ap-southeast-3.rds.amazonaws.com"
+            value: "cilist-db.c1h14jljsded.ap-southeast-3.rds.amazonaws.com"
           - name: DATABASE_PORT
             value: "3306"
           - name: BASE_URL_PORT
